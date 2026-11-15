@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #fffdf7;
+    --ink-primary: #2d2640;
+    --ink-secondary: #564d6e;
+    --mint-soft: #e3faf0;
+    --blue-soft: #dff2fe;
+    --lavender-soft: #f2eaff;
+    --blush-soft: #ffeaf2;
+  }
+
+  html {
+    background-color: var(--bg-cream);
+    color: var(--ink-primary);
+    font-family: 'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-cream);
+    color: var(--ink-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fredoka', 'Nunito', ui-rounded, sans-serif;
+  }
+}
+
+/* Soft bouncy hero text load animation */
+@keyframes hero-pop-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-7px) scale(1.03);
+  }
+  78% {
+    transform: translateY(3px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-word-hop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-6px) rotate(-1.5deg);
+  }
+  70% {
+    transform: translateY(2px) rotate(0.8deg);
+  }
+}
+
+/* Visual Explorer looping background motion animations */
+@keyframes drift-wave-slow {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-18%) translateY(-4px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes drift-cloud-loop {
+  0% {
+    transform: translateX(-12%) translateY(0px);
+  }
+  50% {
+    transform: translateX(14%) translateY(-7px);
+  }
+  100% {
+    transform: translateX(-12%) translateY(0px);
+  }
+}
+
+@keyframes glide-ribbon {
+  0% {
+    transform: translateX(-25%) translateY(4px) scale(0.98);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(15%) translateY(-8px) scale(1.04);
+    opacity: 0.78;
+  }
+  100% {
+    transform: translateX(-25%) translateY(4px) scale(0.98);
+    opacity: 0.45;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1.5deg);
+  }
+}
+
+@keyframes float-bookish {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.2deg);
+  }
+}
+
+@keyframes pulse-orb {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.9;
+  }
+}
+
+.animate-hero-bounce {
+  animation: hero-pop-bounce 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-hero-bounce-delay {
+  animation: hero-pop-bounce 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.14s both;
+}
+
+.animate-word-hop {
+  display: inline-block;
+  animation: hero-word-hop 3.4s ease-in-out 0.9s infinite;
+}
+
+.animate-wave-loop {
+  animation: drift-wave-slow 11s ease-in-out infinite;
+}
+
+.animate-cloud-loop {
+  animation: drift-cloud-loop 9s ease-in-out infinite;
+}
+
+.animate-ribbon-loop {
+  animation: glide-ribbon 7.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4.2s ease-in-out infinite;
+}
+
+.animate-float-bookish {
+  animation: float-bookish 4.8s ease-in-out infinite;
+}
+
+.animate-pulse-orb {
+  animation: pulse-orb 5s ease-in-out infinite;
+}
+
+/* Squishy cartoon card physics */
+.cartoon-card {
+  transition:
+    transform 0.36s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
+}
+
+.cartoon-card-mint {
+  box-shadow: 0 12px 0 #bfead9, 0 22px 44px -14px rgba(102, 198, 173, 0.35);
+}
+
+.cartoon-card-mint:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 0 #a9e2cb, 0 32px 58px -12px rgba(96, 191, 219, 0.45);
+}
+
+.cartoon-card-mint:active {
+  transform: scale(0.995) translateY(3px);
+}
+
+.cartoon-card-lavender {
+  box-shadow: 0 12px 0 #dec9f9, 0 22px 44px -14px rgba(183, 148, 244, 0.35);
+}
+
+.cartoon-card-lavender:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 0 #cfb3f7, 0 32px 58px -12px rgba(235, 164, 198, 0.48);
+}
+
+.cartoon-card-lavender:active {
+  transform: scale(0.995) translateY(3px);
+}
+
+/* Pill-shaped cartoonish 3D pop buttons */
+.pop-pill-mint {
+  box-shadow: 0 6px 0 #53b895, 0 10px 18px -6px rgba(62, 158, 126, 0.35);
+  transition:
+    transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.16s ease,
+    background-color 0.18s ease;
+}
+
+.pop-pill-mint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #53b895, 0 14px 22px -6px rgba(62, 158, 126, 0.42);
+}
+
+.pop-pill-mint:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #53b895, 0 4px 8px -3px rgba(62, 158, 126, 0.28);
+}
+
+.pop-pill-lavender {
+  box-shadow: 0 6px 0 #9f79d9, 0 10px 18px -6px rgba(145, 108, 204, 0.35);
+  transition:
+    transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.16s ease,
+    background-color 0.18s ease;
+}
+
+.pop-pill-lavender:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #9f79d9, 0 14px 22px -6px rgba(145, 108, 204, 0.42);
+}
+
+.pop-pill-lavender:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #9f79d9, 0 4px 8px -3px rgba(145, 108, 204, 0.28);
+}
+
+.pop-pill-neutral {
+  box-shadow: 0 4px 0 #d9d1e8;
+  transition:
+    transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.pop-pill-neutral:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 #cec3e3;
+}
+
+.pop-pill-neutral:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #cec3e3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-bounce,
+  .animate-hero-bounce-delay,
+  .animate-word-hop,
+  .animate-wave-loop,
+  .animate-cloud-loop,
+  .animate-ribbon-loop,
+  .animate-float-gentle,
+  .animate-float-bookish,
+  .animate-pulse-orb {
+    animation: none !important;
+  }
+  .cartoon-card,
+  .pop-pill-mint,
+  .pop-pill-lavender,
+  .pop-pill-neutral {
+    transition: none !important;
+  }
+}
