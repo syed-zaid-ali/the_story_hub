@@ -2,5 +2,7 @@
   "name": "Wonderpath",
   "description": "A playful pastel split-path learning portal routing curious minds between visual motion exploration and deep immersive reading.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
